@@ -27,7 +27,17 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 */
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath(group: 'org.jfrog.buildinfo' ,name: 'build-info-extractor-gradle' , version: '4.0.0')
+    }
+}
 
+version=currentVersion
+apply plugin='xom.jfrog.artifactory'
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'application'
@@ -50,6 +60,8 @@ jar {
 // tag::dependencies[]
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
+
+
 
 dependencies {
     compile "joda-time:joda-time:2.2"
