@@ -43,6 +43,14 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'application'
 
+plugins {
+    id 'application'
+}
+
+application {
+  mainClass.set("hello.HelloWorld")
+}
+
 //mainClassName = 'hello.HelloWorld'
 
 // tag::repositories[]
